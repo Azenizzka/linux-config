@@ -1,0 +1,88 @@
+*{
+    font:   "JetBrainsMono-ExtraBold 12";
+
+    background:    #2e3440be;
+
+    foreground:    #d8dee9be;
+
+    background-color:   transparent;
+    text-color:         @foreground;
+
+    margin:     0;
+    padding:    0;
+    spacing:    0;
+}
+
+window {
+    background-color:   @background;
+
+    location:       center;
+    width:          480;
+    border-radius:  8;
+}
+
+inputbar {
+    font:       @font;
+    padding:    12px;
+    spacing:    12px;
+    children:   [ icon-search, entry ];
+}
+
+icon-search {
+    expand:     false;
+    filename:   "search";
+    size: 28px;
+}
+
+icon-search, entry, element-icon, element-text {
+    vertical-align: 0.5;
+}
+
+entry {
+    font:   inherit;
+
+    placeholder         : "Search";
+    placeholder-color   : @foreground;
+}
+
+message {
+    border:             2px 0 0;
+    border-color:       @background;
+    background-color:   @background;
+}
+
+textbox {
+    padding:    8px 24px;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   false;
+    border:         1px 0 0;
+    border-color:   @background;
+}
+
+element {
+    padding:            8px 16px;
+    spacing:            16px;
+    background-color:   transparent;
+}
+
+element normal active {
+    text-color: @background;
+}
+
+element selected normal, element selected active {
+    background-color:   @background;
+    text-color:         @foreground;
+}
+
+element-icon {
+    size:   48;
+}
+
+element-text {
+    text-color: inherit;
+}
