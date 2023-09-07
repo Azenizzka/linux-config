@@ -1,0 +1,79 @@
+{
+	"layer": "top",
+	"position": "top",
+	"height": 20,
+	"margin-top": 10,
+
+	
+    "modules-left": ["cpu", "memory"],
+    "modules-center": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
+    "modules-right": ["tray", "pulseaudio", "hyprland/language",  "clock"],
+
+
+    "cpu": {
+		"format": "  {usage}%",
+		"tooltip": false
+    },
+
+
+	"memory": {
+		"format": "  {}%",
+		"tooltip": false
+	},
+
+
+	"hyprland/window": {
+		"format": "{class}",
+		"separate-outputs": false
+},
+
+
+	"custom/menu": {
+		"format": "{icon}",
+		"format-icons": "󰣇",
+		"on-click": "wofi --show drun -c ~/.config/hypr/themes/hypr_arch/wofi/config -s /home/owl/.config/hypr/themes/hypr_arch/wofi/style.css",
+		"escape": true,
+		"tooltip": false
+	},
+
+
+	"hyprland/workspaces": {
+		"format": "{icon}",
+		"on-click": "activate",
+		"format-icons": {
+			"1": "󰈹", // firefox
+			"2": "", // code
+			"3": "", // telegram
+			"4": "󰙯" // discord
+			},
+		"tooltip": false
+	},
+
+
+	"hyprland/language": {
+	    "format": "{}",
+	    "format-en": "En",
+	    "format-ru": "Ru"
+	},
+
+
+	"tray": {
+		"icon-size": 12,
+		"spacing": 16
+	},
+
+
+	"clock": {
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"format-alt": "{:%Y-%m-%d}"
+	},
+
+
+    "pulseaudio": {
+		"scroll-step": 1,
+		"format": "{icon}  {volume}%",
+		"format-icons": {
+			"default": ["", "", ""]
+		}
+	}
+}
