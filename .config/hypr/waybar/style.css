@@ -45,6 +45,8 @@ window#waybar {
 #custom-weather,
 #tray,
 #language,
+#battery,
+#backlight,
 #pulseaudio,
 #clock {
 	padding: 0 10px;

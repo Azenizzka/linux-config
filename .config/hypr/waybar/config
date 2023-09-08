@@ -5,15 +5,19 @@
 	"margin-top": 10,
 
 	
-    "modules-left": ["cpu", "memory"],
-    "modules-center": ["hyprland/workspaces", "custom/sep", "hyprland/window"],
-    "modules-right": ["tray", "pulseaudio", "hyprland/language",  "battery", "clock"],
+    "modules-left": ["cpu", "memory", "backlight", "pulseaudio", "custom/sep"],
+    "modules-center": ["hyprland/workspaces", "custom/sep"],
+    "modules-right": ["tray", "custom/sep","hyprland/language", "battery", "clock"],
 
 
     "cpu": {
 		"format": "  {usage}%",
 		"tooltip": false
     },
+
+	"custom/sep": {
+		"format": "_"
+	},
 
 
 	"memory": {
@@ -26,16 +30,6 @@
 		"format": "{class}",
 		"separate-outputs": false
 	},
-
-
-	"custom/menu": {
-		"format": "{icon}",
-		"format-icons": "󰣇",
-		"on-click": "wofi --show drun -c ~/.config/hypr/themes/hypr_arch/wofi/config -s /home/owl/.config/hypr/themes/hypr_arch/wofi/style.css",
-		"escape": true,
-		"tooltip": false
-	},
-
 
 	"hyprland/workspaces": {
 		"format": "{icon}",
@@ -88,5 +82,10 @@
 		"format": "{icon} {capacity}%",
 		"format-charging": "󰂄 {capacity}%",
 		"format-icons": ["", "", "", "", ""]
+	},
+
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "󰌵 {percent}%"
 	}
 }
