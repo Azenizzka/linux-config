@@ -1,23 +1,58 @@
 #!/bin/bash
 
-# Install
-sudo pacman -S mesa meson polkit hyprland hyprpaper waybar capitaine-cursors fish
+function install() {
+    installLibraries
+    installDrivers
+    installUtils
+    installWayland
+    installWM
+    installPrograms
+    installTermial
+    installTheme
+    installConfigs
+}
 
-sudo pacman -S git curl yay base-devel gdb ninja gcc cmake libxcb xcb-proto xcb-util
+function installLibraries() {
+    sudo pacman -S polkit libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite org-xinput libxrender pixman cairo pango seatd libxkbcommon xcb-util-wm wlroots
+}
 
-sudo pacman -S xcb-util-keysyms libxfixes libx11 libxcomposite xorg-xinput libxrender
+function installDrivers() {
+    sudo pacman -S mesa
+}
 
-sudo pacman -S pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm xorg-xwayland cmake wlroots
+function installUtils() {
+    sudo pacman -S meson git yay curl base-devel ninja gcc cmake 
+}
 
-sudo pacman -S alacritty wofi firefox discord noto-fonts-emoji noto-fonts-extra pulseaudio telegram-desktop
+function installWayland() {
+    sudo pacman -S xorg-xwayland
+}
 
-gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors 
+function installWM() {
+    sudo pacman -S hyprland hyprpaper waybar wayland-protocols
+}
 
-# TermnialEmulator + Shell
-chsh -s /usr/bin/fish
+function installPrograms() {
+    sudo pacman -S firefox discord telegram-desktop neofetch htop wofi pulseaudio
+}
 
-cp -r .fonts/ ~/
-fc-cache -fv
+function installTermial() {
+    sudo pacman -S fish alacritty
+}
 
-# Configs
-cp -r .config/ ~/
+function installTheme() {
+    sudo pacman -S capitaine-cursors noto-fonts-emoji noto-fonts-extra
+}
+
+function installConfigs() {
+    gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
+
+    chsh -s /usr/bin/fish
+
+    cp -r .fonts/ ~/
+    cp -r .config/ ~/
+
+    fc-cache -fv
+}
+
+install()

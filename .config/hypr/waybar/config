@@ -52,7 +52,7 @@
 
 
 	"tray": {
-		"icon-size": 12,
+		"icon-size": 32,
 		"spacing": 16
 	},
 
