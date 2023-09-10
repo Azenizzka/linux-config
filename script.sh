@@ -9,7 +9,13 @@ function install() {
     installPrograms
     installTermial
     installTheme
+    makeAudio
     installConfigs
+}
+
+function makeAudio() {
+    sudo pacman -S sof-firmware alsa-utils
+    cp modprobe.d/alsa-base.conf /etc/modprobe.d/
 }
 
 function installLibraries() {
