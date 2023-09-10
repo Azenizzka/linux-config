@@ -1,6 +1,8 @@
 #!/bin/bash
 
 function install() {
+    enableMultilib
+
     installLibraries
     installDrivers
     installUtils
@@ -13,9 +15,13 @@ function install() {
     installConfigs
 }
 
+function enableMultilib() {
+    sudo cp pacman.conf /etc
+}
+
 function makeAudio() {
     sudo pacman -S sof-firmware alsa-utils
-    cp modprobe.d/alsa-base.conf /etc/modprobe.d/
+    sudo cp modprobe.d/alsa-base.conf /etc/modprobe.d/
 }
 
 function installLibraries() {
