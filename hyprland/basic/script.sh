@@ -1,4 +1,4 @@
-#!/bin/bash
+# !/bin/bash
 
 function install() {
     enableMultilib
@@ -67,4 +67,4 @@ function installConfigs() {
     fc-cache -fv
 }
 
-install()
+install
