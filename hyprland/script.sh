@@ -45,7 +45,7 @@ function installWM() {
 }
 
 function installPrograms() {
-    sudo pacman -S firefox discord telegram-desktop neofetch htop wofi pulseaudio
+    sudo pacman -S wofi pulseaudio
 }
 
 function installTermial() {
@@ -53,12 +53,10 @@ function installTermial() {
 }
 
 function installTheme() {
-    sudo pacman -S capitaine-cursors noto-fonts-emoji noto-fonts-extra
+    sudo pacman -S noto-fonts-emoji noto-fonts-extra
 }
 
 function installConfigs() {
-    gsettings set org.gnome.desktop.interface cursor-theme capitaine-cursors
-
     chsh -s /usr/bin/fish
 
     cp -r .fonts/ ~/
