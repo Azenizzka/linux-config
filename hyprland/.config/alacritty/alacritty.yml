@@ -7,7 +7,7 @@ window:
   dynamic_padding: false
 
 scrolling:
-  history: 100
+  history: 2048
 
 font:
     size: 10
