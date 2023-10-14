@@ -45,7 +45,7 @@ function installWM() {
 }
 
 function installPrograms() {
-    sudo pacman -S wofi pulseaudio
+    sudo pacman -S wofi pulseaudio mako
 }
 
 function installTermial() {
