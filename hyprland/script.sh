@@ -45,7 +45,7 @@ function installWM() {
 }
 
 function installPrograms() {
-    sudo pacman -S wofi pulseaudio mako
+    sudo pacman -S wofi pulseaudio mako grim wl-clipboard
 }
 
 function installTermial() {
