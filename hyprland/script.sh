@@ -33,7 +33,7 @@ function installDrivers() {
 }
 
 function installUtils() {
-    sudo pacman -S meson git yay curl base-devel ninja gcc cmake 
+    sudo pacman -S meson git yay curl base-devel ninja gcc cmake  polkit-gnome
 }
 
 function installWayland() {
